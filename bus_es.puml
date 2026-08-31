@@ -1,0 +1,18 @@
+@startuml casosUso
+actor Cliente
+rectangle "Sistema"{
+    usecase "Realizar Reserva" as uc1
+    usecase "Verificar Saldo" as UC2
+    usecase "Rechazar" as UC3
+    usecase "Aprobar" as Uc4 
+}
+
+actor Tequila
+Cliente --> uc1
+uc1 --|> UC2 : <<include>>
+UC3 --|> uc1 : <<extend>> [insuficiente]
+Uc4 --|> uc1 : <<extend>> [suficiente]
+uc1 --> Tequila
+@enduml
+
+
