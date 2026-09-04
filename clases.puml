@@ -1,0 +1,28 @@
+@startuml clases_base
+class Cliente {
+     - nombre: String
+     - direccion: String
+     - telefono: String
+     - pinTarjeta: String
+     - edad: Double
+     # inInterno: int
+     
+     + registrarDatos(): void
+     + solicitarReserva(): void
+}
+
+class Reserva {
+     - idReserva: int
+     - estado: String
+     - fecha: Date
+     
+     + calcularPrecio(): double
+     + confirmarReserva(): void
+}
+
+class Agenda {
+     - localidadesLibres: int
+     
+     + comprobarDisponibilidad(): boolean
+}
+'show [<<stereotype>> or alias] [empty members,members,empty attributes,attributes,empty methods,methods,circle,stereotype,class,interface,enum]
